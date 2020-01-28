@@ -1,0 +1,151 @@
+
+
+//==============================================================================
+// VARIABLES
+//==============================================================================
+$menu-icon-svg--default-color               : #333333;
+$menu-icon-svg--default-background-color    : transparent;
+$menu-icon-svg--default-transition-duration : 80ms;
+$menu-icon-svg--default-hover-color         : #333333;
+$menu-icon-svg--default-focus-color         : #222222;
+$menu-icon-svg--default-active-color        : #111111;
+
+$menu-icon-svg--color                       : $menu-icon-svg--default-color               !default;
+$menu-icon-svg--background-color            : $menu-icon-svg--default-background-color    !default;
+$menu-icon-svg--transition-duration         : $menu-icon-svg--default-transition-duration !default;
+$menu-icon-svg--hover-color                 : $menu-icon-svg--default-hover-color         !default;
+$menu-icon-svg--focus-color                 : $menu-icon-svg--default-focus-color         !default;
+$menu-icon-svg--active-color                : $menu-icon-svg--default-active-color        !default;
+
+$animated-hamburger-menu-icon-svg-selectors: (
+  '#animated-menu-icon-svg, #menu-icon-svg, #animated-menu-svg, #animated-menu-icon, #menu-icon, #menu-svg'
+  '.animated-menu-icon-svg, .menu-icon-svg, .animated-menu-svg, .animated-menu-icon, .menu-icon, .menu-svg'
+);
+
+//==============================================================================
+// CLASSES, PLACEHOLDERS, AND IDs
+//==============================================================================
+%animated-menu-icon-svg {
+  user-select: none !important;
+  position: relative;
+  transition: all 80ms;
+  * { transition: all 80ms; }
+
+  &:active {
+    rect:first-of-type { transform: translatey(12px); }
+    rect:last-of-type { transform: translatey(-12px); }
+  }
+  &.active {
+    transform: translatey(1px);
+    rect:first-of-type, rect:last-of-type { transform-origin: center; }
+    rect:first-of-type { transform: translatey(8px) translatex(-7px) rotate(45deg); }
+    rect:nth-of-type(2) { display: none; }
+    rect:last-of-type { transform: translatey(-9px) translatex(-9px) rotate(-45deg); }
+    &:active {
+      rect:first-of-type { transform: translatey(12px) rotate(0); }
+      rect:last-of-type { transform: translatey(-12px) rotate(0); }
+    }
+  }
+}
+
+
+
+#menu-button {
+  appearance : none;
+  all: unset;
+  border: none;
+  background : #333333;
+  height : 48px;
+  width : 48px;
+  display : flex;
+  flex-direction : column;
+  align-items : center;
+  align-content : center;
+  justify-content : center;
+  border-radius: 4px;
+
+  user-select: none !important;
+  position: relative;
+  transition: all 80ms;
+  cursor : pointer;
+
+  * { transition: all 80ms; }
+  $menu-icon-svg--color: white;
+  line-height : 1;
+  padding : 0;
+  text-align : center;
+  vertical-align : top;
+  transform: scale3d(1, 1, 1);
+  svg {
+    vertical-align : top;
+    line-height : 0;
+    position : absolute;
+    left : 0;
+    right : 0;
+    top : 0;
+    bottom : 4px;
+    text-align : center;
+    margin : auto;
+  }
+  svg rect {
+    fill: $menu-icon-svg--color;
+  }
+  &:active {
+    svg, #animated-menu-icon-svg, #menu-icon {
+      &:active {
+        rect {
+          transform: none;
+        }
+      }
+      rect:first-of-type { transform: translatey(12px); }
+      rect:last-of-type { transform: translatey(-12px); }
+    }
+  }
+  &.active {
+    svg, #animated-menu-icon-svg, #menu-icon {
+      transform: translatey(1px);
+      rect:first-of-type, rect:last-of-type { transform-origin: center; }
+      rect:first-of-type { transform: translatey(8px) translatex(-7px) rotate(45deg); }
+      rect:nth-of-type(2) { display: none; }
+      rect:last-of-type { transform: translatey(-9px) translatex(-9px) rotate(-45deg); }
+    }
+    &:active {
+      svg, #animated-menu-icon-svg, #menu-icon {
+        rect:first-of-type { transform: translatey(12px) rotate(0); }
+        rect:last-of-type { transform: translatey(-12px) rotate(0); }
+      }
+    }
+  }
+
+  &:hover {
+    background : #222222;
+
+  }
+  &:focus {
+    outline: none;
+    opacity : 0.75;
+    background : #111111;
+    box-shadow: 0 0 0 3px rgba(mediumslateblue, 0.35);
+    rect {
+      fill: aliceblue;
+    }
+  }
+  &:active {
+    opacity : 0.25;
+    background : #000000;
+    transform: scale3d(0.9, .9, 1);
+  }
+}
+
+svg {
+  &:focus {
+    background : mediumslateblue;
+  }
+}
+
+//==============================================================================
+// STYLES
+//==============================================================================
+#{$animated-hamburger-menu-icon-svg-selectors} {
+  @extend %animated-menu-icon-svg;
+}
