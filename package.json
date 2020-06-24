@@ -1,11 +1,21 @@
 {
-  "private": true,
+  "name"   : "animated-hamburger-menu-icon",
+  "description": "Animated hamburger menu icon SVG.",
+  "author" : { "email": "dev@mattbrown.email",
+    "name": "Matt Daniel Brown",
+    "url": "https://mattdanielbrown.com"
+  },
+  "repository": { "url": "https://github.com/mattdanielbrown/animated-hamburger-menu-icon-svg",
+    "type": "git"
+  },
   "engines": {
     "node": ">=4"
   },
   "dependencies": {
+    "dracula-prism": "^1.2.1",
     "modern-normalize": "^0.6.0",
-    "modernizr": "^3.7.1"
+    "modernizr": "^3.7.1",
+    "prismjs": "^1.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

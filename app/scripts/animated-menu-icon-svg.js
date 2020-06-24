@@ -5,23 +5,22 @@ const menuIcon = document.getElementById('menu-icon');
 const toggleMenuIconSvgStateButton = document.getElementById('toggleMenuIconSvgStateButton');
 const menuButton = document.getElementById('menu-button');
 
-
-function toggleMenuIconSvgState() {
-  if (menuIconSvg.classList.contains('active')) {
-    menuIconSvg.classList.remove('active');
+function toggleClassForElement(targetClass, targetElement) {
+  if (targetElement.classList.contains(targetClass)) {
+    targetElement.classList.remove(targetClass);
   } else {
-    menuIconSvg.classList.add('active');
+    targetElement.classList.add(targetClass);
   }
 }
+function toggleMenuIconSvgState() {
+  // if (menuIconSvg.classList.contains('active')) menuIconSvg.classList.remove('active'); else menuIconSvg.classList.add('active');
+  toggleClassForElement('active', menuIconSvg);
+}
 function toggleMenuIconState() {
-  if (menuIcon.classList.contains('active')) {
-    menuIcon.classList.remove('active');
-  } else {
-    menuIcon.classList.add('active');
-  }
+  toggleClassForElement('active', menuIcon);
 }
 
 menuIconSvg.addEventListener('click', toggleMenuIconSvgState);
-
 toggleMenuIconSvgStateButton.addEventListener('click', toggleMenuIconSvgState);
 menuButton.addEventListener('click', toggleMenuIconState);
+
