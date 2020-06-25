@@ -13,7 +13,11 @@
 		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "xo && ava",
+		"copy-scss-to-dist": "cp src/style.scss dist/_animated-menu-icon-svg.scss",
+		"compile-styles": "node-sass --output-style=compressed src/style.scss dist/animated-menu-icon-svg.css",
+		"uglify-script": "uglifyjs --output dist/animated-menu-icon-svg.js -- src/animated-menu-icon-svg.js",
+		"quick-uglify": "uglifyjs src/animated-menu-icon-svg.js -m"
 	},
 	"files": [
 		"index.js"
@@ -23,7 +27,10 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
+		"@babel/preset-env": "^7.10.3",
 		"ava": "^3.9.0",
+		"node-sass": "^4.14.1",
+		"uglify-js": "^3.10.0",
 		"xo": "^0.32.0"
 	}
 }

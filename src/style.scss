@@ -1,0 +1,181 @@
+//==============================================================================
+// VARIABLES
+//==============================================================================
+$menu-icon-svg--default-color               : #333333;
+$menu-icon-svg--default-background-color    : transparent;
+$menu-icon-svg--default-transition-duration : 80ms;
+$menu-icon-svg--default-hover-color         : #333333;
+$menu-icon-svg--default-focus-color         : #222222;
+$menu-icon-svg--default-active-color        : #111111;
+
+$menu-icon-svg--color                       : $menu-icon-svg--default-color !default;
+$menu-icon-svg--background-color            : $menu-icon-svg--default-background-color !default;
+$menu-icon-svg--transition-duration         : $menu-icon-svg--default-transition-duration !default;
+$menu-icon-svg--hover-color                 : $menu-icon-svg--default-hover-color !default;
+$menu-icon-svg--focus-color                 : $menu-icon-svg--default-focus-color !default;
+$menu-icon-svg--active-color                : $menu-icon-svg--default-active-color !default;
+
+$animated-hamburger-menu-icon-svg-selectors : (
+  "#animated-menu-icon-svg, #menu-icon-svg, #animated-menu-svg, #animated-menu-icon, #menu-icon, #menu-svg" ".animated-menu-icon-svg, .menu-icon-svg, .animated-menu-svg, .animated-menu-icon, .menu-icon, .menu-svg"
+);
+
+//==============================================================================
+// PLACEHOLDERS, CLASSES, AND IDs
+//==============================================================================
+%animated-menu-icon-svg {
+  position    : relative;
+  transition  : all 80ms;
+  user-select : none !important;
+
+  * { transition : all 80ms; }
+
+  &:active {
+    rect:first-of-type { transform : translatey(12px); }
+
+    rect:last-of-type { transform : translatey(-12px); }
+  }
+
+  &.active {
+    transform : translatey(1px);
+
+    rect:first-of-type, rect:last-of-type { transform-origin : center; }
+
+    rect:first-of-type { transform : translatey(8px) translatex(-7px) rotate(45deg); }
+
+    rect:nth-of-type(2) { display : none; }
+
+    rect:last-of-type { transform : translatey(-9px) translatex(-9px) rotate(-45deg); }
+
+    &:active {
+      rect:first-of-type { transform : translatey(12px) rotate(0); }
+
+      rect:last-of-type { transform : translatey(-12px) rotate(0); }
+    }
+  }
+}
+
+#menu-button {
+  align-content         : center;
+  align-items           : center;
+  all                   : unset;
+  appearance            : none;
+  background            : #333333;
+  border                : none;
+  border-radius         : 4px;
+  cursor                : pointer;
+  display               : flex;
+  flex-direction        : column;
+  height                : 48px;
+  justify-content       : center;
+
+  line-height           : 1;
+  padding               : 0;
+  position              : relative;
+  text-align            : center;
+
+  transform             : scale3d(1, 1, 1);
+
+  $menu-icon-svg--color : white;
+  transition            : all 80ms;
+  user-select           : none !important;
+  vertical-align        : top;
+  width                 : 48px;
+  * {
+    transition  : all 120ms;
+    user-select : none !important;
+  }
+
+  svg {
+    bottom         : 4px;
+    left           : 0;
+    line-height    : 0;
+    margin         : auto;
+    position       : absolute;
+    right          : 0;
+    text-align     : center;
+    top            : 0;
+    vertical-align : top;
+  }
+
+  svg rect {
+    fill : $menu-icon-svg--color;
+  }
+
+  &:active {
+    svg, #animated-menu-icon-svg, #menu-icon {
+      &:active {
+        rect {
+          transform : none;
+        }
+      }
+
+      rect:first-of-type { transform : translatey(12px); }
+
+      rect:last-of-type { transform : translatey(-12px); }
+    }
+  }
+
+  &.active {
+    svg, #animated-menu-icon-svg, #menu-icon {
+      transform : translatey(1px);
+
+      rect:first-of-type, rect:last-of-type { transform-origin : center; }
+
+      rect:first-of-type { transform : translatey(8px) translatex(-7px) rotate(45deg); }
+
+      rect:nth-of-type(2) { display : none; }
+
+      rect:last-of-type { transform : translatey(-9px) translatex(-9px) rotate(-45deg); }
+    }
+
+    &:active {
+      svg, #animated-menu-icon-svg, #menu-icon {
+        rect:first-of-type { transform : translatey(12px) rotate(0); }
+
+        rect:last-of-type { transform : translatey(-12px) rotate(0); }
+      }
+    }
+  }
+
+  &:hover {
+    background : #222222;
+
+    svg rect {
+      fill : darken(white, 10%);
+    }
+  }
+
+  &:focus {
+    background : #111111;
+    //opacity : 0.75;
+    box-shadow : 0 0 0 3px rgba(mediumslateblue, 0.35);
+    outline    : none;
+
+    rect {
+      fill : aliceblue;
+    }
+  }
+
+  &:active {
+    //opacity : 0.25;
+    background : #000000;
+    transform  : scale3d(0.95, .95, 1);
+
+    svg rect {
+      fill : darken(white, 25%);
+    }
+  }
+}
+
+//==============================================================================
+// STYLES
+//==============================================================================
+svg {
+  &:focus {
+    background : mediumslateblue;
+  }
+}
+
+#{$animated-hamburger-menu-icon-svg-selectors} {
+  @extend %animated-menu-icon-svg;
+}
