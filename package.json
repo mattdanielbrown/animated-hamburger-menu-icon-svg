@@ -26,7 +26,14 @@
 	],
 	"main": "index.min.js",
 	"keywords": [
-		""
+		"hamburger-menu",
+		"hamburger",
+		"icon",
+		"navigation",
+		"hamburger-icon",
+		"menu-icon",
+		"animated",
+		"svg"
 	],
 	"dependencies": {},
 	"devDependencies": {

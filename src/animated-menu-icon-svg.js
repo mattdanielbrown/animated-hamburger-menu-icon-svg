@@ -2,10 +2,9 @@
 
 /* eslint no-undef: "error" */
 
-const menuIconSvg = document.querySelector('#animated-menu-icon-svg')
-const menuIcon = document.querySelector('#menu-icon')
-const toggleMenuIconSvgStateButton = document.querySelector('#toggleMenuIconSvgStateButton')
-const menuButton = document.querySelector('#menu-button')
+var menuIconSvg,
+  menuIcon,
+  menuButton
 
 function toggleClassForElement (targetClass, targetElement) {
   if (targetElement.classList.contains(targetClass)) {
@@ -16,7 +15,6 @@ function toggleClassForElement (targetClass, targetElement) {
 }
 
 function toggleMenuIconSvgState () {
-  // If (menuIconSvg.classList.contains('active')) menuIconSvg.classList.remove('active'); else menuIconSvg.classList.add('active');
   toggleClassForElement('active', menuIconSvg)
 }
 
@@ -24,6 +22,15 @@ function toggleMenuIconState () {
   toggleClassForElement('active', menuIcon)
 }
 
-menuIconSvg.addEventListener('click', toggleMenuIconSvgState)
-toggleMenuIconSvgStateButton.addEventListener('click', toggleMenuIconSvgState)
-menuButton.addEventListener('click', toggleMenuIconState)
+if (document.querySelector('#menu-icon-svg')) {
+  menuIconSvg = document.querySelector('#animated-menu-icon-svg')
+  menuIconSvg.addEventListener('click', toggleMenuIconSvgState)
+}
+if (document.querySelector('#menu-icon')) {
+  menuIcon = document.querySelector('#menu-icon')
+  menuIcon.addEventListener('click', toggleMenuIconSvgState)
+}
+if (document.querySelector('#menu-button')) {
+  menuButton = document.querySelector('#menu-button')
+  menuButton.addEventListener('click', toggleMenuIconState)
+}
