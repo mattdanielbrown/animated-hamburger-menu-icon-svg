@@ -1,9 +1,11 @@
 'use strict'
 
-const menuIconSvg = document.getElementById('animated-menu-icon-svg')
-const menuIcon = document.getElementById('menu-icon')
-const toggleMenuIconSvgStateButton = document.getElementById('toggleMenuIconSvgStateButton')
-const menuButton = document.getElementById('menu-button')
+/* eslint no-undef: "error" */
+
+const menuIconSvg = document.querySelector('#animated-menu-icon-svg')
+const menuIcon = document.querySelector('#menu-icon')
+const toggleMenuIconSvgStateButton = document.querySelector('#toggleMenuIconSvgStateButton')
+const menuButton = document.querySelector('#menu-button')
 
 function toggleClassForElement (targetClass, targetElement) {
   if (targetElement.classList.contains(targetClass)) {
@@ -12,10 +14,12 @@ function toggleClassForElement (targetClass, targetElement) {
     targetElement.classList.add(targetClass)
   }
 }
+
 function toggleMenuIconSvgState () {
-  // if (menuIconSvg.classList.contains('active')) menuIconSvg.classList.remove('active'); else menuIconSvg.classList.add('active');
+  // If (menuIconSvg.classList.contains('active')) menuIconSvg.classList.remove('active'); else menuIconSvg.classList.add('active');
   toggleClassForElement('active', menuIconSvg)
 }
+
 function toggleMenuIconState () {
   toggleClassForElement('active', menuIcon)
 }

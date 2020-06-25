@@ -13,7 +13,6 @@
 		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && ava",
 		"copy-scss-to-dist": "cp src/style.scss dist/_animated-menu-icon-svg.scss",
 		"compile-styles": "node-sass --output-style=compressed src/style.scss dist/animated-menu-icon-svg.css",
 		"uglify-script": "uglifyjs --output dist/animated-menu-icon-svg.js -- src/animated-menu-icon-svg.js",
@@ -21,10 +20,11 @@
 	},
 	"files": [
 		"dist/animated-menu-icon-svg.js",
+		"dist/animated-menu-icon-svg.min.js",
 		"dist/_animated-menu-icon-svg.scss",
 		"dist/animated-menu-icon-svg.css"
 	],
-	"main"    : "dist/animated-menu-icon-svg.js",
+	"main"    : "index.min.js",
 	"keywords": [
 		""
 	],
