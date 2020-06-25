@@ -1,6 +1,6 @@
 {
 	"name": "animated-hamburger-icon-svg",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Self-contained, animating-between-states, SVG hamburger menu icon.",
 	"license": "MIT",
 	"repository": "mattdanielbrown/animated-hamburger-icon-svg",
