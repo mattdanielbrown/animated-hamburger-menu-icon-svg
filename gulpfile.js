@@ -211,7 +211,8 @@ function startDistServer() {
 
 let serve;
 if (isDev) {
-  serve = series(clean, parallel(styles, scripts, modernizr, fonts), startAppServer);
+  // serve = series(clean, parallel(styles, scripts, modernizr, fonts), startAppServer);
+  serve = series(clean, parallel(styles, scripts, fonts), startAppServer);
 } else if (isTest) {
   serve = series(clean, scripts, startTestServer);
 } else if (isProd) {
