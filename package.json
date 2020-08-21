@@ -33,5 +33,6 @@
 	"license"     : "MIT" ,
 	"engines"     : {
 		"node" : ">=4"
-	}
+	},
+	"publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
