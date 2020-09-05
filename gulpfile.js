@@ -34,7 +34,7 @@ function styles() {
     .pipe($.if(!isProd, $.sourcemaps.write()))
     .pipe(dest('.tmp/styles'))
     .pipe(server.reload({stream: true}));
-};
+}
 
 function scripts() {
   return src('app/scripts/**/*.js')
@@ -44,7 +44,7 @@ function scripts() {
     .pipe($.if(!isProd, $.sourcemaps.write('.')))
     .pipe(dest('.tmp/scripts'))
     .pipe(server.reload({stream: true}));
-};
+}
 
 async function modernizr() {
   const readConfig = () => new Promise((resolve, reject) => {
@@ -85,11 +85,11 @@ const lintBase = files => {
 function lint() {
   return lintBase('app/scripts/**/*.js')
     .pipe(dest('app/scripts'));
-};
+}
 function lintTest() {
   return lintBase('test/spec/**/*.js')
     .pipe(dest('test/spec'));
-};
+}
 
 function html() {
   return src('app/*.html')
@@ -113,12 +113,12 @@ function images() {
   return src('app/images/**/*', { since: lastRun(images) })
     .pipe($.imagemin())
     .pipe(dest('dist/images'));
-};
+}
 
 function fonts() {
   return src('app/fonts/**/*.{eot,svg,ttf,woff,woff2}')
     .pipe($.if(!isProd, dest('.tmp/fonts'), dest('dist/fonts')));
-};
+}
 
 function extras() {
   return src([
@@ -127,7 +127,7 @@ function extras() {
   ], {
     dot: true
   }).pipe(dest('dist'));
-};
+}
 
 function clean() {
   return del(['.tmp', 'dist'])
