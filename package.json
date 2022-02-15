@@ -17,7 +17,7 @@
   "dependencies": {
     "dracula-prism": "^1.2.1",
     "modern-normalize": "^0.7.0",
-    "modernizr": "^3.11.3",
+    "modernizr": "^3.12.0",
     "prismjs": "^1.21.0"
   },
   "devDependencies": {
