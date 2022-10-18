@@ -49,7 +49,7 @@
     "gulp-useref": "^4.0.1",
     "minimist": "^1.2.6",
     "mkdirp": "^1.0.4",
-    "mocha": "^8.1.1",
+    "mocha": "^10.1.0",
     "yargs": "^15.4.1"
   },
   "scripts": {
