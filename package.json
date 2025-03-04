@@ -15,7 +15,7 @@
     "node": ">=4"
   },
   "dependencies": {
-    "dracula-prism": "^1.2.1",
+    "dracula-prism": "^2.1.2",
     "modern-normalize": "^0.7.0",
     "modernizr": "^3.11.3",
     "prismjs": "^1.21.0"
